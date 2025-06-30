@@ -6,7 +6,7 @@ package javaapplication10;
 
 /**
  *
- * @author adcd_
+ * @author Adolfo Castillo, Andrea Sanchez, Luciano Rojas
  */
 public class Bioinformatica {
 
