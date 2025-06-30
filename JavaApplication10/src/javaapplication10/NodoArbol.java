@@ -8,10 +8,18 @@ package javaapplication10;
  *
  * @author Adolfo Castillo, Andrea Sanchez, Luciano Rojas
  */
+
+/**
+ * Nodo del árbol binario de búsqueda.
+ */
 public class NodoArbol {
     PatronADN patron;
     NodoArbol izquierdo, derecho;
-
+    
+    /**
+     * Constructor del nodo.
+     * @param patron PatronADN a almacenar en el nodo.
+     */
     public NodoArbol(PatronADN patron) {
         this.patron = patron;
         this.izquierdo = null;

@@ -8,13 +8,35 @@ package javaapplication10;
  *
  * @author Adolfo Castillo, Andrea Sanchez, Luciano Rojas
  */
+
+
+/**
+ * Árbol binario de búsqueda para ordenar tripletas por frecuencia.
+ */
 public class ArbolBinario {
     NodoArbol raiz;
 
+    /**
+     * Constructor del árbol binario de búsqueda.
+     */
+    public ArbolBinario() {
+        this.raiz = null;
+    }
+
+    /**
+     * Inserta un patrón en el árbol.
+     * @param patron PatronADN a insertar.
+     */
     public void insertar(PatronADN patron) {
         raiz = insertarRecursivo(raiz, patron);
     }
 
+    /**
+     * Inserta recursivamente en el árbol binario.
+     * @param actual Nodo actual.
+     * @param patron Patron a insertar.
+     * @return Nodo actualizado.
+     */
     private NodoArbol insertarRecursivo(NodoArbol actual, PatronADN patron) {
         if (actual == null) {
             return new NodoArbol(patron);
@@ -27,10 +49,17 @@ public class ArbolBinario {
         return actual;
     }
 
+    /**
+     * Muestra el recorrido inorden del árbol.
+     */
     public void inOrden() {
         inOrdenRecursivo(raiz);
     }
 
+    /**
+     * Recorrido inorden recursivo.
+     * @param nodo Nodo actual.
+     */
     private void inOrdenRecursivo(NodoArbol nodo) {
         if (nodo != null) {
             inOrdenRecursivo(nodo.izquierdo);

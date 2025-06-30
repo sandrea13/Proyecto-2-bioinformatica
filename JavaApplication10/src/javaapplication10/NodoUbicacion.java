@@ -8,10 +8,18 @@ package javaapplication10;
  *
  * @author Adolfo Castillo, Andrea Sanchez, Luciano Rojas
  */
+
+/**
+ * Nodo que almacena la posición de una tripleta dentro de la secuencia principal.
+ */
 public class NodoUbicacion {
     int posicion;
     NodoUbicacion siguiente;
 
+    /**
+     * Constructor del nodo de ubicación.
+     * @param posicion Posición de la tripleta.
+     */
     public NodoUbicacion(int posicion) {
         this.posicion = posicion;
         this.siguiente = null;
