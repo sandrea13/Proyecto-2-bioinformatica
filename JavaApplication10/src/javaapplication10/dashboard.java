@@ -27,15 +27,15 @@ public class dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        VerPatronesAlmacenados = new javax.swing.JToggleButton();
+        Patrones = new javax.swing.JComboBox<>();
+        BuscarPatron = new javax.swing.JButton();
+        VerPatronMenosFrecuente = new javax.swing.JButton();
+        VerPatronMasFrecuente = new javax.swing.JButton();
+        VerReporteDeColisiones = new javax.swing.JButton();
+        VerTripletasPorAminoacido = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Resultados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -43,35 +43,35 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton1.setText("Mostrar patrones almacenados");
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        VerPatronesAlmacenados.setText("Mostrar patrones almacenados");
+        jPanel1.add(VerPatronesAlmacenados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 120, -1));
+        Patrones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(Patrones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 120, -1));
 
-        jButton1.setText("Buscar un patrón");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BuscarPatron.setText("Buscar un patrón");
+        BuscarPatron.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BuscarPatronActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
+        jPanel1.add(BuscarPatron, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
-        jButton2.setText("Ver patrón menos frecuente");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        VerPatronMenosFrecuente.setText("Ver patrón menos frecuente");
+        jPanel1.add(VerPatronMenosFrecuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
-        jButton3.setText("Ver patrón más frecuente");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        VerPatronMasFrecuente.setText("Ver patrón más frecuente");
+        jPanel1.add(VerPatronMasFrecuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jButton4.setText("Ver reporte de colisiones");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 170, -1));
+        VerReporteDeColisiones.setText("Ver reporte de colisiones");
+        jPanel1.add(VerReporteDeColisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 170, -1));
 
-        jButton5.setText("Ver tripletas por aminoácido");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        VerTripletasPorAminoacido.setText("Ver tripletas por aminoácido");
+        jPanel1.add(VerTripletasPorAminoacido, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Resultados.setColumns(20);
+        Resultados.setRows(5);
+        jScrollPane1.setViewportView(Resultados);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 270, 370));
 
@@ -80,9 +80,9 @@ public class dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BuscarPatronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarPatronActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BuscarPatronActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,15 +120,15 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton BuscarPatron;
+    private javax.swing.JComboBox<String> Patrones;
+    private javax.swing.JTextArea Resultados;
+    private javax.swing.JButton VerPatronMasFrecuente;
+    private javax.swing.JButton VerPatronMenosFrecuente;
+    private javax.swing.JToggleButton VerPatronesAlmacenados;
+    private javax.swing.JButton VerReporteDeColisiones;
+    private javax.swing.JButton VerTripletasPorAminoacido;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

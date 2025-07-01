@@ -41,7 +41,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="VerPatronesAlmacenados">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mostrar patrones almacenados"/>
           </Properties>
@@ -51,7 +51,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="Patrones">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -71,12 +71,12 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="BuscarPatron">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar un patr&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuscarPatronActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -84,7 +84,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="VerPatronMenosFrecuente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver patr&#xf3;n menos frecuente"/>
           </Properties>
@@ -94,7 +94,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="VerPatronMasFrecuente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver patr&#xf3;n m&#xe1;s frecuente"/>
           </Properties>
@@ -104,7 +104,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="VerReporteDeColisiones">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver reporte de colisiones"/>
           </Properties>
@@ -114,7 +114,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="VerTripletasPorAminoacido">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver tripletas por amino&#xe1;cido"/>
           </Properties>
@@ -136,7 +136,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="Resultados">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
