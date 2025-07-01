@@ -93,7 +93,23 @@ public class dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarPatronActionPerformed
 
     private void VerPatronesAlmacenadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPatronesAlmacenadosActionPerformed
-        // TODO add your handling code here:
+        // Crear árbol binario
+        ArbolBinario arbol = new ArbolBinario();
+
+        // Recorrer la tabla hash directamente SIN ArrayList
+        for (int i = 0; i < this.hashTable.getTabla().length; i++) {
+            NodoLista actual = this.hashTable.getTabla()[i].cabeza;
+            while (actual != null) {
+                arbol.insertar(actual.dato); // Insertar directamente en el árbol
+                actual = actual.siguiente;
+            }
+        }
+
+        // Obtener el texto ordenado
+        String resultado = arbol.inOrdenComoTexto();
+
+        // Mostrar en el JTextArea
+        Resultados.setText(resultado);
     }//GEN-LAST:event_VerPatronesAlmacenadosActionPerformed
 
     /**

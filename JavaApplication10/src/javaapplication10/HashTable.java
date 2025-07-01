@@ -28,6 +28,24 @@ public class HashTable {
         }
     }
 
+    public ListaEnlazada[] getTabla() {
+        return tabla;
+    }
+
+    public void setTabla(ListaEnlazada[] tabla) {
+        this.tabla = tabla;
+    }
+
+    public int getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(int tamaño) {
+        this.tamaño = tamaño;
+    }
+    
+    
+
     /**
      * Calcula el índice hash para una tripleta.
      * @param tripleta Tripleta de nucleótidos.

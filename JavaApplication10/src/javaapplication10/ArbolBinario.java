@@ -53,18 +53,26 @@ public class ArbolBinario {
      * Muestra el recorrido inorden del árbol.
      */
     public void inOrden() {
-        inOrdenRecursivo(raiz);
+        //inOrdenRecursivo(raiz);
     }
 
     /**
      * Recorrido inorden recursivo.
      * @param nodo Nodo actual.
      */
-    private void inOrdenRecursivo(NodoArbol nodo) {
-        if (nodo != null) {
-            inOrdenRecursivo(nodo.izquierdo);
-            System.out.println("Tripleta: " + nodo.patron.tripleta + ", Frecuencia: " + nodo.patron.frecuencia);
-            inOrdenRecursivo(nodo.derecho);
-        }
+    private void inOrdenRecursivo(NodoArbol nodo, StringBuilder resultado) {
+    if (nodo != null) {
+        inOrdenRecursivo(nodo.izquierdo, resultado);
+        resultado.append("Tripleta: ").append(nodo.patron.tripleta)
+                 .append(" - Frecuencia: ").append(nodo.patron.frecuencia)
+                 .append("\n");
+        inOrdenRecursivo(nodo.derecho, resultado);
+    }
+}
+    
+    public String inOrdenComoTexto() {
+        StringBuilder resultado = new StringBuilder();
+        this.inOrdenRecursivo(raiz, resultado);
+        return resultado.toString();
     }
 }
