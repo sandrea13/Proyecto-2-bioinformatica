@@ -151,7 +151,7 @@ public class inicio extends javax.swing.JFrame {
                 
                 hashTable.imprimirTabla();
                 
-                dashboard d = new dashboard();
+                dashboard d = new dashboard(hashTable);
                 d.setVisible(true);
                 
                 this.setVisible(false);

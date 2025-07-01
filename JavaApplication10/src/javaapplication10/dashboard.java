@@ -10,11 +10,14 @@ package javaapplication10;
  */
 public class dashboard extends javax.swing.JFrame {
 
+    public static HashTable hashTable;
+
     /**
      * Creates new form dashboard
      */
-    public dashboard() {
+    public dashboard(HashTable hashTable) {
         initComponents();
+        this.hashTable = hashTable;
     }
 
     /**
@@ -44,6 +47,11 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         VerPatronesAlmacenados.setText("Mostrar patrones almacenados");
+        VerPatronesAlmacenados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerPatronesAlmacenadosActionPerformed(evt);
+            }
+        });
         jPanel1.add(VerPatronesAlmacenados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         Patrones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -84,6 +92,10 @@ public class dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BuscarPatronActionPerformed
 
+    private void VerPatronesAlmacenadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPatronesAlmacenadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VerPatronesAlmacenadosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -114,7 +126,7 @@ public class dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dashboard().setVisible(true);
+                new dashboard(hashTable).setVisible(true);
             }
         });
     }
