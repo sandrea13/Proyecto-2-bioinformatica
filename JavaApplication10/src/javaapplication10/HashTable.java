@@ -69,5 +69,17 @@ public class HashTable {
         int indice = funcionHash(tripleta);
         return tabla[indice].buscar(tripleta);
     }
+    
+    
+    public void imprimirTabla() {
+        for (int i = 0; i < tabla.length; i++) {
+            NodoLista actual = tabla[i].cabeza;
+            while (actual != null) {
+                System.out.println("Tripleta: " + actual.dato.tripleta + 
+                                   " | Frecuencia: " + actual.dato.frecuencia);
+                actual = actual.siguiente;
+            }
+        }
+    }
 
 }

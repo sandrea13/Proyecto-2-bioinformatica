@@ -125,17 +125,36 @@ public class inicio extends javax.swing.JFrame {
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             // Selecciono el fichero
             File fichero = fc.getSelectedFile();
-            String datos = "";
 
             try (FileReader fr = new FileReader(fichero); BufferedReader br = new BufferedReader(fr)) {
-                StringBuilder cadena = new StringBuilder();
+                StringBuilder secuencia = new StringBuilder();
                 String linea;
                 int modo = 0;
                 while ((linea = br.readLine()) != null) {
-                    System.out.println(linea);
-                    
-                    
+                    secuencia.append(linea.trim().toUpperCase()); // Elimina espacios y convierte a mayúsculas
                 }
+                
+                int totalTripletas = secuencia.length() - 2;
+                HashTable hashTable = new HashTable(totalTripletas);
+
+                // Aquí se procesa la secuencia para crear tripletas
+                String cadena = secuencia.toString();
+                int longitud = cadena.length();
+
+                // Recorremos la secuencia extrayendo tripletas
+                for (int i = 0; i <= longitud - 3; i++) {
+                    String tripleta = cadena.substring(i, i + 3);
+                    hashTable.insertar(tripleta, i); // Insertamos la tripleta en la tabla hash
+                }
+
+                JOptionPane.showMessageDialog(null, "Archivo cargado y procesado correctamente.");
+                
+                hashTable.imprimirTabla();
+                
+                dashboard d = new dashboard();
+                d.setVisible(true);
+                
+                this.setVisible(false);
 
             } catch (IOException e1) {
                 e1.printStackTrace();
