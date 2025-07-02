@@ -68,6 +68,11 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.add(BuscarPatron, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
         VerPatronMenosFrecuente.setText("Ver patrón menos frecuente");
+        VerPatronMenosFrecuente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerPatronMenosFrecuenteActionPerformed(evt);
+            }
+        });
         jPanel1.add(VerPatronMenosFrecuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         VerPatronMasFrecuente.setText("Ver patrón más frecuente");
@@ -133,6 +138,21 @@ public class dashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se encontraron patrones.");
         }
     }//GEN-LAST:event_VerPatronMasFrecuenteActionPerformed
+
+    private void VerPatronMenosFrecuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPatronMenosFrecuenteActionPerformed
+        PatronADN patron = hashTable.obtenerPatronMenosFrecuente();
+        String resultado = "";
+            
+        if (patron != null) {
+            resultado += "Tripleta menos frecuente: " + patron.tripleta;
+            resultado += "\nFrecuencia: " + (patron.frecuencia);
+            resultado += "\nUbicaciones: " + (patron.ubicaciones.obtenerUbicacionesComoTexto());
+
+            Resultados.setText(resultado.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontraron patrones.");
+        }
+    }//GEN-LAST:event_VerPatronMenosFrecuenteActionPerformed
 
     /**
      * @param args the command line arguments

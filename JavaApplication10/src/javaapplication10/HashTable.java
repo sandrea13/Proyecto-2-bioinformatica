@@ -115,5 +115,22 @@ public class HashTable {
 
         return masFrecuente;
     }
+    
+    public PatronADN obtenerPatronMenosFrecuente() {
+        PatronADN menosFrecuente = null;
+
+        for (int i = 0; i < tabla.length; i++) {
+            NodoLista actual = tabla[i].cabeza;
+            while (actual != null) {
+                if (menosFrecuente == null || actual.dato.frecuencia < menosFrecuente.frecuencia) {
+                    menosFrecuente = actual.dato;
+                }
+                actual = actual.siguiente;
+            }
+        }
+
+        return menosFrecuente;
+    }
+
 
 }
