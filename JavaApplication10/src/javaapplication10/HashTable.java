@@ -99,5 +99,21 @@ public class HashTable {
             }
         }
     }
+    
+    public PatronADN obtenerPatronMasFrecuente() {
+        PatronADN masFrecuente = null;
+
+        for (int i = 0; i < tabla.length; i++) {
+            NodoLista actual = tabla[i].cabeza;
+            while (actual != null) {
+                if (masFrecuente == null || actual.dato.frecuencia > masFrecuente.frecuencia) {
+                    masFrecuente = actual.dato;
+                }
+                actual = actual.siguiente;
+            }
+        }
+
+        return masFrecuente;
+    }
 
 }

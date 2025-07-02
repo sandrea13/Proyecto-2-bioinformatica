@@ -36,4 +36,6 @@ public class PatronADN {
     public void agregarUbicacion(int posicion) {
         this.ubicaciones.agregar(posicion);
     }
+    
+
 }

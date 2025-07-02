@@ -45,4 +45,14 @@ public class ListaUbicaciones {
             actual = actual.siguiente;
         }
     }
+    
+    public String obtenerUbicacionesComoTexto() {
+        StringBuilder sb = new StringBuilder();
+        NodoUbicacion actual = cabeza;
+        while (actual != null) {
+            sb.append(actual.posicion).append(" ");
+            actual = actual.siguiente;
+        }
+        return sb.toString();
+    }
 }

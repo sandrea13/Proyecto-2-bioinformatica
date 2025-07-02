@@ -4,6 +4,8 @@
  */
 package javaapplication10;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Adolfo Castillo, Andrea Sanchez, Luciano Rojas 
@@ -69,6 +71,11 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.add(VerPatronMenosFrecuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         VerPatronMasFrecuente.setText("Ver patrón más frecuente");
+        VerPatronMasFrecuente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerPatronMasFrecuenteActionPerformed(evt);
+            }
+        });
         jPanel1.add(VerPatronMasFrecuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         VerReporteDeColisiones.setText("Ver reporte de colisiones");
@@ -111,6 +118,21 @@ public class dashboard extends javax.swing.JFrame {
         // Mostrar en el JTextArea
         Resultados.setText(resultado);
     }//GEN-LAST:event_VerPatronesAlmacenadosActionPerformed
+
+    private void VerPatronMasFrecuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPatronMasFrecuenteActionPerformed
+        PatronADN patron = hashTable.obtenerPatronMasFrecuente();
+        String resultado = "";
+            
+        if (patron != null) {
+            resultado += "Tripleta más frecuente: " + patron.tripleta;
+            resultado += "\nFrecuencia: " + (patron.frecuencia);
+            resultado += "\nUbicaciones: " + (patron.ubicaciones.obtenerUbicacionesComoTexto());
+
+            Resultados.setText(resultado.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontraron patrones.");
+        }
+    }//GEN-LAST:event_VerPatronMasFrecuenteActionPerformed
 
     /**
      * @param args the command line arguments
