@@ -84,6 +84,11 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.add(VerPatronMasFrecuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         VerReporteDeColisiones.setText("Ver reporte de colisiones");
+        VerReporteDeColisiones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerReporteDeColisionesActionPerformed(evt);
+            }
+        });
         jPanel1.add(VerReporteDeColisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 170, -1));
 
         VerTripletasPorAminoacido.setText("Ver tripletas por aminoácido");
@@ -153,6 +158,11 @@ public class dashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se encontraron patrones.");
         }
     }//GEN-LAST:event_VerPatronMenosFrecuenteActionPerformed
+
+    private void VerReporteDeColisionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerReporteDeColisionesActionPerformed
+        String reporte = hashTable.reporteColisiones();
+        Resultados.setText(reporte);
+    }//GEN-LAST:event_VerReporteDeColisionesActionPerformed
 
     /**
      * @param args the command line arguments

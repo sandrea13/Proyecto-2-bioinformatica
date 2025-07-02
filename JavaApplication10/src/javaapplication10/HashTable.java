@@ -131,6 +131,41 @@ public class HashTable {
 
         return menosFrecuente;
     }
+    
+    public String reporteColisiones() {
+        String reporte = "";
+        boolean hayColisiones = false;
+
+        for (int i = 0; i < tabla.length; i++) {
+            NodoLista actual = tabla[i].cabeza;
+
+            // Contar cuántos nodos hay en esta posición
+            int contador = 0;
+            NodoLista temp = actual;
+            while (temp != null) {
+                contador++;
+                temp = temp.siguiente;
+            }
+
+            // Si hay más de un nodo, hubo colisión
+            if (contador > 1) {
+                hayColisiones = true;
+                reporte+=("Colisión en índice ") + i+ (":\n");
+
+                while (actual != null) {
+                    reporte+=(" - Tripleta: ")+(actual.dato.tripleta)+(" | Frecuencia: ")+(actual.dato.frecuencia)+("\n");
+                    actual = actual.siguiente;
+                }
+                reporte+=("\n");
+            }
+        }
+
+        if (!hayColisiones) {
+            reporte+=("No se detectaron colisiones.\n");
+        }
+
+        return reporte.toString();
+    }
 
 
 }
