@@ -57,19 +57,29 @@ public class ArbolBinario {
     }
 
     /**
-     * Recorrido inorden recursivo.
-     * @param nodo Nodo actual.
-     */
+    * Método auxiliar recursivo que recorre el árbol en inorden.
+    * 
+    * @param nodo Nodo actual del recorrido.
+    * @param resultado StringBuilder donde se va acumulando la salida ordenada.
+    */
     private void inOrdenRecursivo(NodoArbol nodo, StringBuilder resultado) {
-    if (nodo != null) {
-        inOrdenRecursivo(nodo.izquierdo, resultado);
-        resultado.append("Tripleta: ").append(nodo.patron.tripleta)
-                 .append(" - Frecuencia: ").append(nodo.patron.frecuencia)
-                 .append("\n");
-        inOrdenRecursivo(nodo.derecho, resultado);
+        if (nodo != null) {
+            inOrdenRecursivo(nodo.izquierdo, resultado);
+            resultado.append("Tripleta: ").append(nodo.patron.tripleta)
+                     .append(" - Frecuencia: ").append(nodo.patron.frecuencia)
+                     .append("\n");
+            inOrdenRecursivo(nodo.derecho, resultado);
+        }
     }
-}
     
+    /**
+    * Realiza un recorrido inorden del árbol binario y devuelve un String
+    * con todas las tripletas almacenadas y sus frecuencias en orden ascendente.
+    * 
+    * Este método es útil para mostrar los patrones almacenados ordenados por frecuencia.
+    * 
+    * @return String con la representación inorden del árbol.
+    */
     public String inOrdenComoTexto() {
         StringBuilder resultado = new StringBuilder();
         this.inOrdenRecursivo(raiz, resultado);

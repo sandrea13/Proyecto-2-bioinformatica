@@ -88,7 +88,9 @@ public class HashTable {
         return tabla[indice].buscar(tripleta);
     }
     
-    
+    /**
+    * Imprime en consola todas las tripletas almacenadas en la tabla hash junto con sus frecuencias.
+    */
     public void imprimirTabla() {
         for (int i = 0; i < tabla.length; i++) {
             NodoLista actual = tabla[i].cabeza;
@@ -100,6 +102,11 @@ public class HashTable {
         }
     }
     
+    /**
+    * Obtiene el patrón (tripleta) que tiene la mayor frecuencia en la tabla hash.
+    * 
+    * @return PatronADN que representa la tripleta más frecuente.
+    */
     public PatronADN obtenerPatronMasFrecuente() {
         PatronADN masFrecuente = null;
 
@@ -116,6 +123,11 @@ public class HashTable {
         return masFrecuente;
     }
     
+    /**
+    * Obtiene el patrón (tripleta) que tiene la menor frecuencia en la tabla hash.
+    * 
+    * @return PatronADN que representa la tripleta menos frecuente.
+    */
     public PatronADN obtenerPatronMenosFrecuente() {
         PatronADN menosFrecuente = null;
 
@@ -132,6 +144,13 @@ public class HashTable {
         return menosFrecuente;
     }
     
+    
+    /**
+    * Genera un reporte de colisiones en la tabla hash.
+    * Una colisión ocurre cuando más de una tripleta diferente ocupa la misma posición de la tabla hash.
+    * 
+    * @return String con el reporte de las posiciones donde hubo colisiones y las tripletas involucradas.
+    */
     public String reporteColisiones() {
         String reporte = "";
         boolean hayColisiones = false;
@@ -168,7 +187,13 @@ public class HashTable {
     }
     
     
-    
+    /**
+    * Lista todas las tripletas almacenadas en la tabla hash junto con el aminoácido que cada una sintetiza.
+    * 
+    * Convierte las tripletas de ADN a ARN (reemplaza T por U) para realizar la comparación.
+    * 
+    * @return String con el listado de tripletas, aminoácidos correspondientes y sus frecuencias.
+    */
     public String listarPorAminoacido() {
         StringBuilder resultado = new StringBuilder();
 
