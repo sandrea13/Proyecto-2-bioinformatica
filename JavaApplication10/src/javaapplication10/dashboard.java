@@ -92,6 +92,11 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1.add(VerReporteDeColisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 170, -1));
 
         VerTripletasPorAminoacido.setText("Ver tripletas por aminoácido");
+        VerTripletasPorAminoacido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerTripletasPorAminoacidoActionPerformed(evt);
+            }
+        });
         jPanel1.add(VerTripletasPorAminoacido, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         Resultados.setColumns(20);
@@ -163,6 +168,11 @@ public class dashboard extends javax.swing.JFrame {
         String reporte = hashTable.reporteColisiones();
         Resultados.setText(reporte);
     }//GEN-LAST:event_VerReporteDeColisionesActionPerformed
+
+    private void VerTripletasPorAminoacidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerTripletasPorAminoacidoActionPerformed
+        String reporte = hashTable.listarPorAminoacido();
+        Resultados.setText(reporte);
+    }//GEN-LAST:event_VerTripletasPorAminoacidoActionPerformed
 
     /**
      * @param args the command line arguments

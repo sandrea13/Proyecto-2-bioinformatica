@@ -166,6 +166,78 @@ public class HashTable {
 
         return reporte.toString();
     }
+    
+    
+    
+    public String listarPorAminoacido() {
+        StringBuilder resultado = new StringBuilder();
+
+        // Tabla de codones completa (en ARN)
+        String[][] codonTable = {
+            {"UUU", "Fenilalanina (F)"}, {"UUC", "Fenilalanina (F)"},
+            {"UUA", "Leucina (L)"}, {"UUG", "Leucina (L)"},
+            {"CUU", "Leucina (L)"}, {"CUC", "Leucina (L)"},
+            {"CUA", "Leucina (L)"}, {"CUG", "Leucina (L)"},
+            {"AUU", "Isoleucina (I)"}, {"AUC", "Isoleucina (I)"},
+            {"AUA", "Isoleucina (I)"}, {"AUG", "Metionina (Inicio)"},
+            {"GUU", "Valina (V)"}, {"GUC", "Valina (V)"},
+            {"GUA", "Valina (V)"}, {"GUG", "Valina (V)"},
+            {"UCU", "Serina (S)"}, {"UCC", "Serina (S)"},
+            {"UCA", "Serina (S)"}, {"UCG", "Serina (S)"},
+            {"CCU", "Prolina (P)"}, {"CCC", "Prolina (P)"},
+            {"CCA", "Prolina (P)"}, {"CCG", "Prolina (P)"},
+            {"ACU", "Treonina (T)"}, {"ACC", "Treonina (T)"},
+            {"ACA", "Treonina (T)"}, {"ACG", "Treonina (T)"},
+            {"GCU", "Alanina (A)"}, {"GCC", "Alanina (A)"},
+            {"GCA", "Alanina (A)"}, {"GCG", "Alanina (A)"},
+            {"UAU", "Tirosina (Y)"}, {"UAC", "Tirosina (Y)"},
+            {"UAA", "STOP (Ocre)"}, {"UAG", "STOP (Ámbar)"},
+            {"CAU", "Histidina (H)"}, {"CAC", "Histidina (H)"},
+            {"CAA", "Glutamina (Q)"}, {"CAG", "Glutamina (Q)"},
+            {"AAU", "Asparagina (N)"}, {"AAC", "Asparagina (N)"},
+            {"AAA", "Lisina (K)"}, {"AAG", "Lisina (K)"},
+            {"GAU", "Ácido aspártico (D)"}, {"GAC", "Ácido aspártico (D)"},
+            {"GAA", "Ácido glutámico (E)"}, {"GAG", "Ácido glutámico (E)"},
+            {"UGU", "Cisteína (C)"}, {"UGC", "Cisteína (C)"},
+            {"UGA", "STOP (Ópalo)"}, {"UGG", "Triptófano (W)"},
+            {"CGU", "Arginina (R)"}, {"CGC", "Arginina (R)"},
+            {"CGA", "Arginina (R)"}, {"CGG", "Arginina (R)"},
+            {"AGU", "Serina (S)"}, {"AGC", "Serina (S)"},
+            {"AGA", "Arginina (R)"}, {"AGG", "Arginina (R)"},
+            {"GGU", "Glicina (G)"}, {"GGC", "Glicina (G)"},
+            {"GGA", "Glicina (G)"}, {"GGG", "Glicina (G)"}
+        };
+
+        // Recorremos la tabla hash
+        for (int i = 0; i < tabla.length; i++) {
+            NodoLista actual = tabla[i].cabeza;
+
+            while (actual != null) {
+                String tripletaADN = actual.dato.tripleta;
+                String tripletaARN = tripletaADN.replace('T', 'U'); // Convertir a ARN
+
+                // Buscar en la tabla de codones
+                String aminoacido = "No corresponde a un aminoácido";
+
+                for (int j = 0; j < codonTable.length; j++) {
+                    if (codonTable[j][0].equals(tripletaARN)) {
+                        aminoacido = codonTable[j][1];
+                        break;
+                    }
+                }
+
+                resultado.append("Tripleta: ").append(tripletaADN)
+                         .append(" - Aminoácido: ").append(aminoacido)
+                         .append(" - Frecuencia: ").append(actual.dato.frecuencia)
+                         .append("\n");
+
+                actual = actual.siguiente;
+            }
+        }
+
+        return resultado.toString();
+    }
+
 
 
 }
