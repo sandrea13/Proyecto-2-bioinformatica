@@ -33,7 +33,6 @@ public class dashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         VerPatronesAlmacenados = new javax.swing.JToggleButton();
-        Patrones = new javax.swing.JComboBox<>();
         BuscarPatron = new javax.swing.JButton();
         VerPatronMenosFrecuente = new javax.swing.JButton();
         VerPatronMasFrecuente = new javax.swing.JButton();
@@ -41,6 +40,7 @@ public class dashboard extends javax.swing.JFrame {
         VerTripletasPorAminoacido = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Resultados = new javax.swing.JTextArea();
+        Busqueda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,9 +55,6 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(VerPatronesAlmacenados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
-
-        Patrones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(Patrones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 120, -1));
 
         BuscarPatron.setText("Buscar un patrón");
         BuscarPatron.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +101,7 @@ public class dashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Resultados);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 270, 370));
+        jPanel1.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 280, 120, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 420));
 
@@ -111,7 +109,15 @@ public class dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BuscarPatronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarPatronActionPerformed
-        // TODO add your handling code here:
+        String letras = Busqueda.getText();
+        PatronADN patron = hashTable.buscar(letras.toUpperCase());
+        
+        if (patron.tripleta == null){
+            Resultados.setText("No se encontro");
+        }else{
+            Resultados.setText(patron.tripleta);
+        }
+        
     }//GEN-LAST:event_BuscarPatronActionPerformed
 
     private void VerPatronesAlmacenadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPatronesAlmacenadosActionPerformed
@@ -211,7 +217,7 @@ public class dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarPatron;
-    private javax.swing.JComboBox<String> Patrones;
+    private javax.swing.JTextField Busqueda;
     private javax.swing.JTextArea Resultados;
     private javax.swing.JButton VerPatronMasFrecuente;
     private javax.swing.JButton VerPatronMenosFrecuente;
