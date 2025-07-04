@@ -52,9 +52,9 @@ public class ArbolBinario {
     /**
      * Muestra el recorrido inorden del árbol.
      */
-    public void inOrden() {
+    //public void inOrden() {
         //inOrdenRecursivo(raiz);
-    }
+    //}
 
     /**
     * Método auxiliar recursivo que recorre el árbol en inorden.
